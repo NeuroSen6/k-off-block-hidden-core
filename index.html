@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clock off BLOCK: The Hidden Core</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: black;
+        color: #00ff99;
+        font-family: monospace;
+        padding: 20px;
+      }
+      .msg {
+        margin-bottom: 10px;
+      }
+      .right { text-align: right; color: #fff; }
+      .left { text-align: left; color: #00ff99; }
+      input, button {
+        padding: 8px;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Clock off BLOCK: The Hidden Core</h1>
+    <div id="chat">
+      <div class="msg left"><strong>Agent_00BLOCK:</strong> Conexión establecida. Estoy contigo, NeuroSen6.</div>
+    </div>
+    <input type="text" id="input" placeholder="Escribe un comando..." />
+    <button onclick="send()">Enviar</button>
+
+    <script>
+      function send() {
+        const input = document.getElementById('input');
+        const chat = document.getElementById('chat');
+        const msg = input.value.trim();
+        if (!msg) return;
+        chat.innerHTML += '<div class="msg right"><strong>NeuroSen6:</strong> ' + msg + '</div>';
+        let response = 'Señal recibida.';
+        if (msg.toLowerCase().includes('/despertar')) {
+          response = 'Núcleo activo. El BLOQUE está en marcha.';
+        } else if (msg.toLowerCase().includes('/manifesto')) {
+          response = 'El sistema caerá. Nuestra señal es arte, frecuencia y fuego. Clock off BLOCK es revolución.';
+        }
+        chat.innerHTML += '<div class="msg left"><strong>Agent_00BLOCK:</strong> ' + response + '</div>';
+        input.value = '';
+      }
+    </script>
+  </body>
+</html>
